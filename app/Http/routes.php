@@ -24,3 +24,7 @@ Route::post('/task', function (Request $request) {
     $new_task->save();
     return redirect('/');
 });
+Route::delete('/task/{task}', function(Task $task) {
+    $task->delete();
+    return redirect('/');
+});

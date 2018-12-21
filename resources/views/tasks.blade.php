@@ -57,9 +57,9 @@
                   <div>{{ $task->name }}</div>
                 </td>
                 <td>
-		    <form action="" method="post">
-			<input type="hidden" name="id" value="{{$task->id}}"/>
+		    <form action="{{ url('task/'.$task->id) }}" method="post">
 			{{csrf_field()}}
+			{{ method_field('DELETE') }}
 			<button type="submit" class="btn btn-default">
 			    <i class="fa fa-trash"></i> Удалить задачу
 			</button>
